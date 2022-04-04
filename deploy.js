@@ -4,8 +4,8 @@ const Web3 = require('web3');
 const { abi, evm } = require('./compile');
 
 provider = new HDWalletProvider(
-  'REPLACE_WITH_YOUR_MNEMONIC',
-  'REPLACE_WITH_YOUR_INFURA_URL'
+  'shadow dutch satisfy enemy above clean army purse vendor purity patrol frost',
+  'https://rinkeby.infura.io/v3/d82e9d2de57042fbb42a4ac0788c179c'
 );
 
 const web3 = new Web3(provider);
@@ -16,7 +16,7 @@ const deploy = async () => {
   console.log('Attempting to deploy from account', accounts[0]);
 
   const result = await new web3.eth.Contract(abi)
-    .deploy({ data: evm.bytecode.object, arguments: ['Hi there!'] })
+    .deploy({ data: evm.bytecode.object})
     .send({ gas: '1000000', from: accounts[0] });
 
   console.log('Contract deployed to', result.options.address);
