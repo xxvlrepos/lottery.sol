@@ -118,5 +118,5 @@ describe("Lottery Contract", () => {
     console.log(balance);
     assert(balance==0)
     });
-    
+    //example
 });
